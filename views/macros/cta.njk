@@ -1,0 +1,10 @@
+{% macro renderCta(text, btn, href) %}
+    <div class="footer-flash-about home-flash-dark">
+        <div class="container">
+            {{ text }}
+            <div class="mt-4">
+                <a href="{{href}}" class="btn btn-link fs18 text-underline" style="border: 1px solid #fff">{{ btn }}</a>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

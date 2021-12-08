@@ -1,0 +1,81 @@
+{% extends "_layout.njk" %}
+{% import 'macros/_header.njk' as header %}
+{% block head %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+<meta name="description" content="Lewis - Creative Portfolio HTML Template">
+<meta name="author" content="Paul, Logan Cee">
+<title>Doodle Factory</title>
+{% endblock %}
+{% block content %}
+{{ header.renderHeader('index', true) }}
+<ul class="social social-rounded social-rounded-fixed">
+  <li>
+    <a href="{{ social.ig }}">
+      <i class="socicon-instagram"></i>
+    </a>
+  </li>
+  <li>
+    <a href="{{ social.fb }}">
+      <i class="socicon-facebook"></i>
+    </a>
+  </li>
+  {# <li><a href="#"><i class="socicon-googleplus"></i></a></li> #}
+</ul>
+<div class="copyright-fixed">
+  <a href="mailto:{{ email }}">
+    <i class="icon ion-ios-email-outline"></i>
+    {{ email }}</a>
+</div>
+<div class="promo-minimal-container">
+  <div class="promo-minimal a-minimal">
+    <div class="row no-gutters">
+      {% for slide in index.slides %}
+      <a href="about-us.html" class="col-lg-4 minimal-item minimal-about animsition-link"
+        data-animsition-out-class="fade-out">
+        <div class="minimal-item-content">
+          <div class="minimal-item-letter font-custom">
+            <div class="letter letter1">
+              <div class="text-texture" style="background-image: url({{ imgDir }}{{ slide.img }});">
+                <div class="inside">
+                  {{ slide.initial }}
+                </div>
+              </div>
+            </div>
+            &nbsp;
+          </div>
+          <h2 class="minimal-item-title font-custom">{{ slide.heading | safe }}</h2>
+          <div class="minimal-item-descr text-grey">{{ slide.subtext }}</div>
+          <div class="minimal-item-more">
+            <i class="icon ion-android-arrow-forward"></i>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="promo-minimal-hover">
+    <div class="row no-gutters">
+      {% for slide in index.slides %}
+      <div class="col-lg-4 minimal-item minimal-about">
+        <div class="minimal-item-content">
+          <div class="minimal-item-letter font-custom">
+            <div class="letter letter1">
+              <div class="text-texture" style="background-image: url({{ imgDir }}{{ slide.img }});">
+                <div class="inside">{{ slide.initial }}</div>
+              </div>
+            </div>
+            &nbsp;
+          </div>
+          <h2 class="minimal-item-title font-custom">{{ slide.heading | safe }}</h2>
+          <div class="minimal-item-descr text-grey">{{ slide.subtext }}</div>
+          <div class="minimal-item-more">
+            <i class="icon ion-android-arrow-forward"></i>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

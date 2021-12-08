@@ -1,0 +1,632 @@
+{
+    "imgDir": "/img/",
+    "email": "thedoodlefactorypune@gmail.com",
+    "phone": "+9198232 66511",
+    "social": {
+        "fb": "https://business.facebook.com/thedoodlefactorypune/",
+        "ig": "https://www.instagram.com/the_doodle_factory/"
+    },
+    "index": {
+        "slides": [
+            {
+                "initial": "T",
+                "heading": "The Doodle Factory",
+                "subtext": "Welcome to a World of Creativity! Your one-stop-shop for all things Art, Calligraphy and Illustration.",
+                "img": "WORKSHOP-BANNER---Floral-.jpeg"
+            },
+            {
+                "initial": "C",
+                "heading": "Classes",
+                "subtext": "Learn with us! Join people from all over the world in our weekly classes for Adults and Kids.",
+                "img": "WORKSHOP-BANNER---Food-Art.jpeg"
+            },
+            {
+                "initial": "C",
+                "heading": "Commissions",
+                "subtext": "Hire us! We make original Art, Illustration and Calligraphy for a wide range of commercial and personal projects.",
+                "img": "WORKSHOPS---Brush-Lettering.jpg"
+            }
+        ]
+    },
+    "shop": {
+        "title": "Shop"
+    },
+    "workshops": {
+        "title": "We create engaging experiences for adults using creativity, imagination & art.",
+        "brief": "Our team of artists provide classes & workshops for both amateurs & professionals. We will take you on an art journey of self-expression & growth. Join us to see how we can add value to your company or you.",
+        "classes_brief": "Our Weekly classes are designed to keep your art practice active and vibrant. We explore a myriad topics to allow you to explore your creativity in areas which might have hitherto seemed daunting or even veiled in obscurity. <br/> <br/> Come and join our vibrant community of adults from a wide range of backgrounds who have all found kinship in their collective pursuit of proficiency in Art. <br/> <br/> We have sessions on Pencil Sketching, Pen and Ink Art and Watercolour as mediums. Our topics range from the casual like Floral Art, Travel Art and Food Illustration to classic subjects like Still Life, Portraiture & Landscape. We equip our students with a strong understanding of the basics techniques of all the mediums so that they can choose their path ahead with confidence and self assurance. <br /><br />Many of our adult students have gone on to create their own artworks for private and commercial projects, while our younger students are now pursuing courses in Art or Design in some of the most prestigious colleges in the country. And we are immensely proud of their achievements!",
+        "kids_brief": "When kids enroll in our art classes you can rest assured that will become art aficionados for life. Learning Art is not only for artists. Art is like butter on bread, you can do without it, but with it life is so much richer! Learning Art from a young age helps in making children perceptive, patient and also persistent! These qualities are of great benefit whether you choose to pursue art as a career or as a life-long hobby. Enroll today & see how it changes your life!",
+        "adult_brief": "If you have ever looked at a painting and said to yourself ‘I wish I could make that!’ - then The Doodle Factory Art for Adults classes are for you. With our unique teaching method we have helped hundreds of students realize their dream of making their own art! At The Doodle Factory we believe ‘Everyone is an Artist; all you need is Patience, Perseverance & the ability to laugh at yourself'. Sign up today and find out for yourself!",
+        "workshops": [],
+        "schedule": {
+            "kids": [
+                {
+                    "day": "Monday Evening",
+                    "time": "4:15-5:15 PM",
+                    "fees": "1,400"
+                },
+                {
+                    "day": "Tuesday Evening",
+                    "time": "4:30-5:30 PM",
+                    "fees": "1,400"
+                }
+            ],
+            "adults": [
+                {
+                    "day": "Tuesday morning",
+                    "time": "11-12:30 AM",
+                    "fees": "2,000"
+                },
+                {
+                    "day": "Thursday Evening",
+                    "time": "05-6:30 PM",
+                    "fees": "2,000"
+                },
+                {
+                    "day": "Friday morning (US-Canada) Art",
+                    "time": "11-12:30 AM",
+                    "fees": "2,000"
+                },
+                {
+                    "day": "Friday Afternoon - Art",
+                    "time": "2:30-4:00 PM",
+                    "fees": "2,000"
+                },
+                {
+                    "day": "Saturday Morning - Art",
+                    "time": "9:30-11 AM",
+                    "fees": "2,000"
+                }
+            ]
+        }
+    },
+    "about": {
+        "bannerTitle": "Adult Art Classes",
+        "bannerText": "Hello! Welcome To <br> The Doodle Factory",
+        "bannerCTA": "Join our club",
+        "brief": "The Doodle Factory is a place to enjoy all things Art - learn with us, commission us for artwork for your homes or offices, buy our products! TDF was set up in 2009 to infuse original, contemporary and practical art in products, education & industry. We continue to receive an amazing response from our clients, customers and students for all our services. Our motto here at The Doodle Factory is - Doodle up the world!",
+        "services": {
+            "title": "Our Classes & Workshops",
+            "subtitle": "Creative Art Classes for Adults",
+            "brief": "At the Doodle Factory we endeavor to provide this magic brush and contribute to the creation of original art, formal & casual calligraphy and versatile illustration. We celebrate the process of making illustrations by hand and yet have adequately integrated ourselves in the modern world so as to supply our ware to a digital world. At The Doodle Factory we make art for the world to become a better place!",
+            "categories": [
+                "Art Classes",
+                "Self- Expression",
+                "Floral Art",
+                "Watercolour Painting",
+                "Flower Doodle Art",
+                "Floral Painting",
+                "Calligraphy"
+            ]
+        },
+        "skills": [
+            {
+                "name": "Illustration for Publications",
+                "per": "90"
+            },
+            {
+                "name": "Corporate Workshops",
+                "per": "90"
+            },
+            {
+                "name": "Wall Art - Small and Large Scale",
+                "per": "90"
+            },
+            {
+                "name": "Pet Portraits",
+                "per": "90"
+            },
+            {
+                "name": "School Workshops",
+                "per": "90"
+            },
+            {
+                "name": "Infographics",
+                "per": "90"
+            },
+            {
+                "name": "Scribing",
+                "per": "90"
+            },
+            {
+                "name": "Surface Pattern Design for textiles",
+                "per": "90"
+            },
+            {
+                "name": "Customised Handmade Illustrations for calendars etc.",
+                "per": "90"
+            },
+            {
+                "name": "Calligraphy for Weddings, Certificates, Letters, Keepsakes.",
+                "per": "90"
+            }
+        ]
+    },
+    "illustrations": {
+        "cards": [
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "AFA---Envelope-_-Stamp-Art.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "AFA---Gift-Box-Art-_-Origami.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "AFA---Lettering-1.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "AFA---Pen-and-Ink-Art-1.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "AFA---Travel-Art.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "AFA---Travel-Art-2.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "AFA---Travel-Art-3.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "AFA---TRAVEL-ART-1.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "BANNER---Art-for-Adults.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "afa",
+                "delay": ".2s",
+                "img": "Workshops---FLORALS-.jpg",
+                "title": "AFA",
+                "categoryTitle": "AFA"
+            },
+            {
+                "category": "calligraphy",
+                "delay": ".4s",
+                "img": "CALLIGRAPHY-.jpg",
+                "title": "Calligraphy",
+                "categoryTitle": "Calligraphy"
+            },
+            {
+                "category": "calligraphy",
+                "delay": ".6s",
+                "img": "Calligraphy---CARDS.jpg",
+                "title": "Calligraphy",
+                "categoryTitle": "Calligraphy"
+            },
+            {
+                "category": "calligraphy",
+                "delay": ".2s",
+                "img": "Calligraphy---KEEPSAKES.jpg",
+                "title": "Calligraphy",
+                "categoryTitle": "Calligraphy"
+            },
+            {
+                "category": "calligraphy",
+                "delay": ".4s",
+                "img": "Calligraphy---Letters.jpg",
+                "title": "Calligraphy",
+                "categoryTitle": "Calligraphy"
+            },
+            {
+                "category": "commisions",
+                "delay": ".2s",
+                "img": "COMMISSION---Recipe-Illustration.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".2s",
+                "img": "COMMISSIONS---Animal-Calendar-for-PALS.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".6s",
+                "img": "COMMISSIONS---Animal-Calendar-for-PALS-1.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".4s",
+                "img": "COMMISSIONS---Animal-Calendar-for-PALS-2.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".2s",
+                "img": "COMMISSIONS---Animal-Calendar-for-PALS-3.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".4s",
+                "img": "COMMISSIONS---Animal-Calendar-for-PALS-4.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".2s",
+                "img": "COMMISSIONS---Bird-Art-6.jpeg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".6s",
+                "img": "COMMISSIONS---Bird-Art-7.jpeg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".4s",
+                "img": "COMMISSIONS---Bird-Art-8.jpeg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".4s",
+                "img": "COMMISSIONS---Bird-Art-8-1.jpeg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".6s",
+                "img": "COMMISSIONS---Bird-Art-1.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".2s",
+                "img": "COMMISSIONS---Bird-Art-2.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".6s",
+                "img": "COMMISSIONS---Bird-Art-3.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".4s",
+                "img": "COMMISSIONS---Bird-Art-4.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".2s",
+                "img": "COMMISSIONS---Bird-Art-5.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".6s",
+                "img": "COMMISSIONS---Corporate-Calendar.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".4s",
+                "img": "COMMISSIONS---Landscape.jpeg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".2s",
+                "img": "COMMISSIONS---Pet-Portrait-1.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".4s",
+                "img": "COMMISSIONS---Pet-Portrait-2.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "commisions",
+                "delay": ".2s",
+                "img": "COMMISSIONS---Publications---Vogue.jpg",
+                "title": "Commisions",
+                "categoryTitle": "Commisions"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".4s",
+                "img": "IMG_1437.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".6s",
+                "img": "IMG_1439.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".6s",
+                "img": "IMG_1441.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".2s",
+                "img": "IMG_1442.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".4s",
+                "img": "IMG_1443.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".4s",
+                "img": "IMG_1445.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".2s",
+                "img": "IMG_1446.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".4s",
+                "img": "IMG_1448.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".6s",
+                "img": "IMG_1449.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".4s",
+                "img": "IMG_1450.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".4s",
+                "img": "IMG_1451.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "illustrations",
+                "delay": ".2s",
+                "img": "IMG_1452.jpeg",
+                "title": "Illustrations",
+                "categoryTitle": "Illustrations"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".2s",
+                "img": "KIDS-CLASS-1.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".4s",
+                "img": "KIDS-CLASS-2.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".6s",
+                "img": "KIDS-CLASS-3.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".4s",
+                "img": "KIDS-CLASS-4.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".6s",
+                "img": "KIDS-CLASS-5.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".2s",
+                "img": "KIDS-CLASS-6.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".2s",
+                "img": "KIDS-CLASS-6-1.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".4s",
+                "img": "KIDS-CLASS-7.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".4s",
+                "img": "KIDS-CLASS-8.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "kids-class",
+                "delay": ".6s",
+                "img": "TDF-in-SCHOOLS-1.jpg",
+                "title": "Kids-Class",
+                "categoryTitle": "Kids-Class"
+            },
+            {
+                "category": "lettering",
+                "delay": ".6s",
+                "img": "Lettering---CASUAL-NOTES.jpg",
+                "title": "Lettering",
+                "categoryTitle": "Lettering"
+            },
+            {
+                "category": "lettering",
+                "delay": ".4s",
+                "img": "Lettering---POSTERS.jpg",
+                "title": "Lettering",
+                "categoryTitle": "Lettering"
+            },
+            {
+                "category": "lettering",
+                "delay": ".2s",
+                "img": "Lettering---RECIPES.jpg",
+                "title": "Lettering",
+                "categoryTitle": "Lettering"
+            },
+            {
+                "category": "murals",
+                "delay": ".2s",
+                "img": "MURALS-1.jpg",
+                "title": "MURALS",
+                "categoryTitle": "MURALS"
+            },
+            {
+                "category": "murals",
+                "delay": ".4s",
+                "img": "MURALS-2.jpg",
+                "title": "MURALS",
+                "categoryTitle": "MURALS"
+            },
+            {
+                "category": "murals",
+                "delay": ".6s",
+                "img": "MURALS-3.jpg",
+                "title": "MURALS",
+                "categoryTitle": "MURALS"
+            },
+            {
+                "category": "murals",
+                "delay": ".2s",
+                "img": "MURALS-4.jpg",
+                "title": "MURALS",
+                "categoryTitle": "MURALS"
+            },
+            {
+                "category": "murals",
+                "delay": ".2s",
+                "img": "MURALS-5.jpg",
+                "title": "MURALS",
+                "categoryTitle": "MURALS"
+            },
+            {
+                "category": "murals",
+                "delay": ".2s",
+                "img": "MURALS-6.jpg",
+                "title": "MURALS",
+                "categoryTitle": "MURALS"
+            },
+            {
+                "category": "murals",
+                "delay": ".6s",
+                "img": "MURALS-7A.jpg",
+                "title": "MURALS",
+                "categoryTitle": "MURALS"
+            },
+            {
+                "category": "murals",
+                "delay": ".6s",
+                "img": "MURALS-7B.jpg",
+                "title": "MURALS",
+                "categoryTitle": "MURALS"
+            },
+            {
+                "category": "murals",
+                "delay": ".2s",
+                "img": "MURALS-8.jpg",
+                "title": "MURALS",
+                "categoryTitle": "MURALS"
+            },
+            {
+                "category": "pr",
+                "delay": ".4s",
+                "img": "PRESS---Vogue-India.jpg",
+                "title": "PR",
+                "categoryTitle": "PR"
+            }
+        ]
+    }
+}

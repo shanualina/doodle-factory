@@ -1,0 +1,107 @@
+{% macro renderHeader(activePage='index', topmenu=false) %}
+  <header id="header" class="header header-fixed">
+    <div class="container-fluid clearfix">
+      <div class="brand">
+        <a href="/">
+          <div class="brand-name">
+            <img src="/img/TDF-logo-for-web.png" alt="" width="120px">{# TDF #}
+          </div>
+        </a>
+      </div>
+      <button class="nav-toggle-btn a-nav-toggle">
+        <span class="nav-toggle-title">Menu</span>
+        <span class="nav-toggle">
+          <span class="stick stick-1"></span>
+          <span class="stick stick-2"></span>
+          <span class="stick stick-3"></span>
+        </span>
+      </button>
+      <a href="/cart">
+        <svg class="svg-icon" style="float: right; margin-right: 20px; margin-top: 5px;" width="24" height="24" viewBox="0 0 24 24" fill="#000" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 8V6C7 4.67392 7.52678 3.40215 8.46447 2.46447C9.40215 1.52678 10.6739 1 12 1C13.3261 1 14.5979 1.52678 15.5355 2.46447C16.4732 3.40215 17 4.67392 17 6V8H20C20.2652 8 20.5196 8.10536 20.7071 8.29289C20.8946 8.48043 21 8.73478 21 9V21C21 21.2652 20.8946 21.5196 20.7071 21.7071C20.5196 21.8946 20.2652 22 20 22H4C3.73478 22 3.48043 21.8946 3.29289 21.7071C3.10536 21.5196 3 21.2652 3 21V9C3 8.73478 3.10536 8.48043 3.29289 8.29289C3.48043 8.10536 3.73478 8 4 8H7ZM7 10H5V20H19V10H17V12H15V10H9V12H7V10ZM9 8H15V6C15 5.20435 14.6839 4.44129 14.1213 3.87868C13.5587 3.31607 12.7956 3 12 3C11.2044 3 10.4413 3.31607 9.87868 3.87868C9.31607 4.44129 9 5.20435 9 6V8Z"></path>
+        </svg>
+      </a>
+      {% if (topmenu) %}
+        <nav class="navbar-nav d-none d-md-block">
+          <ul>
+            <li class="active">
+              <a href="/classes" class="nav-link animsition-link" data-animsition-out-class="fade-out" data-text="classes">
+              classes</a>
+            </li>
+            <li>
+              <a
+                href="/illustrations"
+                class="nav-link animsition-link"
+                data-animsition-out-class="fade-out"
+                data-text="illustrations">illustrations</a>
+            </li>
+            <li>
+              <a href="/about" class="nav-link animsition-link" data-animsition-out-class="fade-out" data-text="about">about</a>
+            </li>
+            <li>
+              <a href="/shop" class="nav-link animsition-link" data-animsition-out-class="fade-out" data-text="shop">shop</a>
+            </li>
+            <li>
+              <a href="/cart" class="nav-link animsition-link" data-animsition-out-class="fade-out" data-text="cart">cart</a>
+            </li>
+            <li>
+              <a href="/contact" class="nav-link animsition-link" data-animsition-out-class="fade-out" data-text="contact">contact</a>
+            </li>
+          </ul>
+        </nav>
+      {% endif %}
+    </div>
+    <div class="hide-menu a-nav-toggle"></div>
+    <div class="menu">
+      <div class="menu-main" id="accordion">
+        <ul>
+          <li class="active">
+            <a data-text="Home" class="animsition-link" data-animsition-out-class="fade-out" href="/">Home</a>
+          </li>
+          <li>
+            <a data-text="Classes" href="/classes" class="animsition-link" data-animsition-out-class="fade-out">Classes</a>
+          </li>
+          <li>
+            <a data-text="Illustrations" class="animsition-link" data-animsition-out-class="fade-out" href="/illustrations">
+            Illustrations</a>
+          </li>
+          <li>
+            <a data-text="About Us" class="animsition-link" data-animsition-out-class="fade-out" href="/about" role="button">About
+              Us</a>
+          </li>
+          <li>
+              <a href="/shop" class="animsition-link" data-animsition-out-class="fade-out" data-text="Shop">Shop</a>
+            </li>
+            <li>
+              <a href="/cart" class="animsition-link" data-animsition-out-class="fade-out" data-text="Cart">Cart</a>
+            </li>
+          <li>
+            <a href="/contact" class="animsition-link" data-animsition-out-class="fade-out" data-text="Contact Us">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-footer">
+        <ul class="social social-rounded">
+          <li>
+            <a href="{{ social.ig }}">
+              <i class="socicon-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="{{ social.fb }}">
+              <i class="socicon-facebook"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="menu-copyright">&copy;
+          <script>
+            document.write(new Date().getFullYear())
+          </script>
+          &nbsp;
+          <strong>Doodle Factory</strong>. All Rights Reserved.<br/> Created by
+          <strong>Hoko Hoko Media</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endmacro %}

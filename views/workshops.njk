@@ -1,0 +1,156 @@
+{% extends "_layout.njk" %}
+{% import 'macros/_header.njk' as header %}
+{% import 'macros/cta.njk' as cta %}
+
+
+{% block head %}
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+    <meta name="description" content="Lewis - Creative Portfolio HTML Template">
+    <meta name="author" content="Paul, Logan Cee">
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.22.0/axios.min.js" integrity="sha512-m2ssMAtdCEYGWXQ8hXVG4Q39uKYtbfaJL5QMTbhl2kc6vYyubrKHhr6aLLXW4ITeXSywQLn1AhsAaqrJl8Acfg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Workshops | Doodle Factory</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="theme-orange fixed-footer fixed-footer-lg">
+  {{ header.renderHeader('index') }}
+    <div class="section" style="background-image: url(img/classes-bg.jpg);">
+      <div class="section-item">
+        <div class="container">
+          <div class="mt70 text-left">
+            <div class="row">
+              <div class="col-md-10">
+                <h1 class="fs60 mb20 font-libre text-uppercase wow fadeInUp"> {{ workshops.title }} </h1>
+              </div>
+            </div>
+            <div class="fs20 lh-lg2 text-grey mt60 wow fadeInUp" data-wow-delay=".2s"> {{ workshops.brief }} </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+  {#    <div class="section-item text-left" style="height: 100vh;">
+        <div class="container">
+          <div class="service-promo-list">
+            <div class="service-promo-item row no-gutters wow fadeInLeft" data-wow-delay=".2s" data-wow-offset="150">
+              <div class="col-sm-4 service-promo-item-photo" style="background-image: url(img/pic177.jpg);">
+                <img src="img/pic177.jpg" alt="" class="img-fluid d-sm-none">
+              </div>
+              <div class="col-sm-8 service-promo-item-detail">
+                <div class="service-promo-item-title">Branded eCommerce</div>
+                <div class="fs18 text-grey">We build and activate brands throung cultural insight, strategic vision and the power of emotion. Help their to recognize their actual personality and make the best reflection of it in the market</div>
+                <div class="row fs20">
+                  <div class="col-lg-6 mt70">
+                    <div class="section-item-title-xs section-item-title-xs-narrow mb35"><strong>skills</strong></div>
+                    <ul class="nav flex-column">
+                      <li><a href="#">Branding</a></li>
+                      <li><a href="#">Graphic Design</a></li>
+                      <li><a href="#">Product Design</a></li>
+                      <li><a href="#">3d Concept</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6 mt70">
+                    <div class="section-item-title-xs section-item-title-xs-narrow mb35"><strong>Projects</strong></div>
+                    <ul class="nav flex-column">
+                      <li><a href="#">Arquito</a>, <a href="#">Bauhaus</a>, <a href="#">Kons</a></li>
+                      <li><a href="#">Invisionapp</a>, <a href="#">UltraHouse</a>, <a href="#">IMB Co,</a></li>
+                      <li><a href="#">Daniel Jhon</a>, <a href="#">ITC Co.</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <img src="/img/bg-3d.jpg" alt="" width="100%" height="100%"> 
+      </div> #}
+
+      <div id="app" class="section-item text-left">
+        <div class="container pt-5">
+          <h4 class="mt10 mb20 font-libre">Weekly Classes</h4>
+          <div class="fs20 lh-lg2 text-grey"> {{ workshops.classes_brief | safe }} </div>
+
+          <div class="progress-list mt50">
+            <h4 class="mt10 mb10 font-libre">For Kids</h4>
+            <div class="fs20 mb30 lh-lg2 text-grey"> {{ workshops.kids_brief | safe }} </div>
+            {# {% for item in workshops.schedule.kids %} #}
+              <div class="progress-item wow fadeInRight" v-for="(cla, index) in kidsClasses" data-wow-delay=".2s">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="progress-item-num font-libre"> [[ index + 1 ]] </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="progress-item-title"> [[ cla.weekday ]] [[ cla.timeOfDay ]] - [[ cla.startTime ]] [[ cla.endTime ]] </div>
+                    <div class="fs18 text-grey"><b>FEES: Rs [[ cla.price ]] per month</b> </div>
+                    <div class="" style="margin-top: 20px;">
+                      <button class="btn btn-link fs18 text-black text-underline" @click="registerClass(cla._id)" style="border: 1px solid #2d1a6a">Sign Up Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {# {% endfor %} #}
+            <br><br>
+            <h4 class="mt10 mb10 font-libre"> <b>For Adults</b> </h4>
+            <div class="fs20 mb30 lh-lg2 text-grey"> {{ workshops.adult_brief | safe }} </div>
+            {# {% for item in workshops.schedule.adults %} #}
+              <div class="progress-item wow fadeInRight" v-for="(cla, index) in adultClasses" data-wow-delay=".2s">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="progress-item-num font-libre"> [[ index + 1 ]] </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="progress-item-title"> [[ cla.weekday ]] [[ cla.timeOfDay ]] - [[ cla.startTime ]] [[ cla.endTime ]] </div>
+                    <div class="fs18 text-grey"><b>FEES: Rs [[ cla.price ]] per month</b> </div>
+                    <div class="" style="margin-top: 20px;">
+                      <button class="btn btn-link fs18 text-black text-underline" @click="registerClass(cla._id)" style="border: 1px solid #2d1a6a">Sign Up Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {# {% endfor %} #}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {{ cta.renderCta('Looking to explore art at home? Shop home kits & art supplies at the doodle factory store and start your art journey today!', 'Shop Now', '/shop') }}
+  {% include "partials/_footer.njk" %}
+  <script>
+    new Vue({
+      el: '#app',
+      delimiters: ['[[', ']]'],
+      data: {
+        kidsClasses: [],
+        adultClasses: []
+      },
+      async created() {
+        const { data } = await axios.get('api/class');
+        for (const cla of data) {
+          if (cla.type == 'kids') {
+            this.kidsClasses.push(cla)
+          } else {
+            this.adultClasses.push(cla)
+          }
+        }
+      },
+      methods: {
+        registerClass(id) {
+          let classes = sessionStorage.getItem('classes');
+
+          if (classes) {
+            sessionStorage.removeItem('classes');
+            sessionStorage.setItem('classes', id);
+          } else {
+            sessionStorage.setItem('classes', id);
+          }
+          
+          window.location.href = '/register-class'
+        }
+      }
+    })
+  </script>
+{% endblock %}

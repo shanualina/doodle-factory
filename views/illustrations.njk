@@ -1,0 +1,63 @@
+{% extends "_layout.njk" %}
+{% import 'macros/_header.njk' as header %}
+{% import 'macros/cta.njk' as cta %}
+
+
+{% block head %}
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+    <meta name="description" content="Lewis - Creative Portfolio HTML Template">
+    <meta name="author" content="Paul, Logan Cee">
+    <title>Illustrations | Doodle Factory</title>
+{% endblock %}
+
+{% block content %}
+  <div class="theme-orange fixed-footer fixed-footer-lg">
+      {{ header.renderHeader('index') }}
+
+        <div class="section section-content">
+          <div class="container">
+            <div class="row justify-content-md-center">
+              <div class="col-lg-10">
+                <h3 class="section-item-title-xs">Featured Illustrations</h3>
+                <h1 class="h2-flash font-abril">Imagination, Creation &amp; Growth</h1>
+
+                <ul class="nav nav-inline parallax-link a-grid-filter">
+                  <li class="nav-item active"><a data-filter="*" data-text="All">All</a></li>
+                  <li class="nav-item"><a data-filter=".category-murals" data-text="Murals">Murals</a></li>
+                  <li class="nav-item"><a data-filter=".category-illustrations" data-text="Illustrations">Illustrations</a></li>
+                  <li class="nav-item"><a data-filter=".category-afa" data-text="AFA Workshops">AFA Workshops</a></li>
+                  <li class="nav-item"><a data-filter=".category-kids-class" data-text="Kids Classes">Kids Classes</a></li>
+                  <li class="nav-item"><a data-filter=".category-commisions" data-text="Commissions">Commissions</a></li>
+                  <li class="nav-item"><a data-filter=".category-letterings" data-text="Letterings">Letterings</a></li>
+                  <li class="nav-item"><a data-filter=".category-calligraphy" data-text="Calligraphy">Calligraphy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="project-list-flash row no-gutters a-grid">
+            {% for card in illustrations.cards %}
+              <div class="col-lg-4 col-sm-6 grid-item wow fadeInUp category-{{ card.category }}" data-wow-delay="{{ card.delay }}">
+                <a class="project-item">
+                  <div class="project-carousel-photo" style="background-image:url({{ imgDir }}{{ card.categoryTitle }}/{{ card.img }})"></div>
+                  <div class="project-carousel-detail">
+                    <div class="project-carousel-go"><i class="icon ion-ios-arrow-right"></i></div>
+                    <h4 class="project-carousel-title">{{ card.title }}</h4>
+                    {# <div class="project-carousel-category text-white">{{ card.categoryTitle }}</div> #}
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+        {#   <div class="container">
+            <div class="more more-lg more-total-lg text-center"><a href="#" class="underline">More project</a></div>
+          </div> #}
+        </div>
+      </div>
+    {{ cta.renderCta('We offer art classes for both adults & kids. Enroll today & jumpstart your art journey today!', 'Learn More', '/classes') }}
+    {% include "partials/_footer.njk" %}
+
+{% endblock %}

@@ -1,0 +1,251 @@
+{% extends "_layout.njk" %}
+{% import 'macros/_header.njk' as header %}
+{% import 'macros/cta.njk' as cta %}
+
+
+{% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+  <meta name="description" content="Lewis - Creative Portfolio HTML Template">
+  <meta name="author" content="Paul, Logan Cee">
+  <title>Shop | Doodle Factory</title>
+  <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.22.0/axios.min.js" integrity="sha512-m2ssMAtdCEYGWXQ8hXVG4Q39uKYtbfaJL5QMTbhl2kc6vYyubrKHhr6aLLXW4ITeXSywQLn1AhsAaqrJl8Acfg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="theme-orange fixed-footer fixed-footer-lg">
+    {{ header.renderHeader('index') }}
+    <div class="section-centered text-dark" style="background-image: url(img/bg-about-me2.jpg); background-position-y: center; padding-top: 7rem;">
+      <div class="section-item">
+        <div class="container">
+          {# <div class="next-title mb55 wow fadeInUp"><strong> {{ shop.title }} </strong></div> #}
+          <h2 class="h1-lg font-libre mb60 wow fadeInUp" data-wow-delay=".2s"><strong> Your Shopping Cart </strong></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" style="padding-bottom: 0" id="app">
+    <div class="container wow fadeInUp" data-wow-delay=".2s" >
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+          <tr v-for="product in products" :key="product.id">
+            <td> [[ product.title ]] </td>
+            <td> ₹[[ product.price ]] </td>
+            <td>
+              <div class="border d-flex justify-content-around text-secondary w-50 w-sm-100 py-2 fs20">
+                <div class="acc font-weight-bold" @click="removeItem(product.id)">-</div>
+                <div> [[ product.count ]] </div>
+                <div class="acc fonr-weight-bold" @click="addItem(product.id)">+</div>
+              </div>
+            </td>
+            <td> ₹[[ product.price * product.count ]] </td>
+            <td>
+              <div @click="deleteProduct(product.id)" class="acc">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 6H22V8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8H2V6H7V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V6ZM18 8H6V20H18V8ZM9 4V6H15V4H9Z" fill="#121212"></path>
+                </svg>
+              </div>  
+            </td>
+          </tr>
+          <tr v-if="products.length > 0">
+            <td colspan="3" class="text-center font-weight-bold">Total Amount</td>
+            <td><b>₹[[ totalPrice ]]</b></td>
+            <td></td>
+          </tr>
+          <tr v-else>
+            <td colspan="5" class="text-center">Please Add Items into Cart From <a href="/shop">Here</a></td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-item">
+        <div class="container wow fadeInUp" data-wow-delay=".2s">
+          <h3 class="fs36 mb120">Fill Your Information</h3>
+          <div class="row">
+            <div class="col-md-8">
+              <form action="#" class="text-left">
+              
+                  <div class="mb30 d-flex justify-content-between">
+                    <div class="w-50 pr-2">
+                      <label class="label-custom">Name</label>
+                      <input type="text" class="form-control form-control-custom" placeholder="Your name" />
+                    </div>
+                    <div class="w-50 pl-2">
+                      <label class="label-custom">Phone Number</label>
+                      <input type="text" class="form-control form-control-custom" placeholder="Your Phone Number" />
+                    </div>
+                  </div>
+                  <div class="mb30">
+                      <label class="label-custom">Email</label>
+                      <input type="text" class="form-control form-control-custom" placeholder="Your Email Address" />
+                  </div>
+                  <div class="mb30">
+                    <label class="label-custom">Zip Code</label>
+                    <input type="text" class="form-control form-control-custom" placeholder="Your Zip Code" />
+                  </div>
+                  <div class="mb30">
+                    <label class="label-custom">Address</label>
+                    {# <textarea rows="1" cols="30" class="form-control form-control-custom" placeholder="Write your address here"></textarea> #}
+                    <input type="text" class="form-control form-control-custom" placeholder="Your Address" />
+
+                  </div>
+
+                {# <div class="mt40 text-center"><button class="btn btn-link fs18 text-black text-underline">send message</button></div> #}
+              </form>
+          </div>
+          <div class="col-md-4 py-3">
+            <div class="h-100" style="background-color: #aeaeae;">
+              <div class="h-25 text-white" style="background-color: #2b2b2b">
+                <h3 class="pt-4 pb-2"><u>Order Summary</u></h3>
+              </div>
+              <div class="d-flex pt-4 justify-content-around">
+                <h5>Total Products:</h5>
+                <h5>[[ products.length ]]</h5>
+              </div>
+              <div class="d-flex justify-content-around">
+                <h5>Total Price:</h5>
+                <h5>₹[[ totalPrice ]]</h5>
+              </div>
+              <button class="btn btn-link fs18 text-black text-underline" @click="checkout" style="margin-top: 4rem; border: 1px solid #2d1a6a">checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ {#    <div class="section">
+      <div class="section-item">
+        <div class="container wow fadeInUp" data-wow-delay=".2s">
+          <h3 class="fs36 mb120">Order Summary</h3>
+            <div class="row">
+       
+            </div>
+        </div>
+      </div>
+    </div> #}
+
+    
+  </div>
+  {# {{ cta.renderCta('We offer art classes for both adults & kids. Enroll today & jumpstart your art journey today!', 'Learn More', '/classes') }} #}
+  {% include "partials/_footer.njk" %}
+  <script>
+    new Vue({
+      el: '#app',
+      delimiters: ['[[', ']]'],
+      data: {
+        products: [],
+        classes: [],
+        totalPrice: 0,
+        name: 'hashim',
+        address: '',
+        email: '',
+        contact: '',
+        zipcode: '',
+        state: '',
+        city: '',
+        orderId: ''
+      },
+      async created() {
+        this.calculateProducts();
+      },
+      methods: {
+        async calculateProducts() {
+          const cartProducts = JSON.parse(sessionStorage.getItem('products'));
+          const ids = [];
+
+          for (const key in cartProducts) {
+            ids.push(key);
+          }
+          const { data } = await axios.post('/api/shop-products', { ids });
+
+          this.products = data.map((product) => {
+            let count = 0;
+
+            for (const key in cartProducts) {
+              if (key == product.id) {
+                count = cartProducts[key];
+              }
+            }
+
+            return {
+              count,
+              ...product
+            }
+          });
+
+
+          this.totalPrice = [...this.products].reduce((total, product) => (total + product.count * product.price), 0);
+        },  
+        getTotalPrce() {
+          // return this.
+        },
+        addItem(id) {
+          const products = JSON.parse(sessionStorage.getItem('products'));
+          products[id] = products[id] + 1;
+          sessionStorage.removeItem('products');
+          sessionStorage.setItem('products', JSON.stringify(products));
+          this.calculateProducts();
+        },
+        removeItem(id) {
+          const products = JSON.parse(sessionStorage.getItem('products'));
+          products[id] = products[id] - 1;
+
+          if (!products[id]) delete products[id];
+
+          sessionStorage.removeItem('products');
+          sessionStorage.setItem('products', JSON.stringify(products));
+          this.calculateProducts();
+        },
+        deleteProduct(id) {
+          const products = JSON.parse(sessionStorage.getItem('products'));
+          delete products[id];
+          sessionStorage.removeItem('products');
+          sessionStorage.setItem('products', JSON.stringify(products));
+          this.calculateProducts();
+        },
+        async generateOrderId() {
+          const { data } = await axios.post('/api/create-order', { amount: this.totalPrice });
+          this.orderId = data;
+        },
+        async completePlayment(paymentId, orderId, signature) {
+          const { data } = await axios.post('api/complete-payment', { paymentId, orderId: this.orderId });
+          console.log(data)
+        },
+        clearCart() {
+
+        },
+        async checkout() {
+          this.generateOrderId();
+          const self = this;
+
+          const options = {
+            key: "{{ keyid }}",
+            amount: self.totalPrice,
+            currency: "INR",
+            name: self.name,
+            description: "Test Transaction",
+            // "image: "https://example.com/your_logo",
+            order_id: self.orderId,
+            handler: function (response) {
+              self.completePlayment(response.razorpay_payment_id, response.razorpay_order_id, response.razorpay_signature);
+            }
+          };
+
+          const rzp1 = new Razorpay(options);
+          rzp1.open();
+        }
+      }
+    });
+  </script>
+{% endblock %}

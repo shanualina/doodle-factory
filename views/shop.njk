@@ -1,0 +1,156 @@
+{% extends "_layout.njk" %}
+{% import 'macros/_header.njk' as header %}
+{% import 'macros/cta.njk' as cta %}
+
+
+{% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+  <meta name="description" content="Lewis - Creative Portfolio HTML Template">
+  <meta name="author" content="Paul, Logan Cee">
+  <title>Shop | Doodle Factory</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.22.0/axios.min.js" integrity="sha512-m2ssMAtdCEYGWXQ8hXVG4Q39uKYtbfaJL5QMTbhl2kc6vYyubrKHhr6aLLXW4ITeXSywQLn1AhsAaqrJl8Acfg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7.0.7/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper@7.0.7/swiper-bundle.min.js"></script>
+  {# <link href="https://cdn.jsdelivr.net/npm/swiper@5.3.6/css/swiper.min.css" rel="stylesheet"> #}
+
+{% endblock %}
+
+{% block content %}
+  <div class="theme-orange fixed-footer fixed-footer-lg">
+    {{ header.renderHeader('index') }}
+    <div class="section section-content section-centered full-height full-image-dark text-white" style="background-image: url(img/shop/shop-banner.jpg); background-position-y: center;">
+      <div class="section-item">
+        <div class="container">
+          <div class="next-title mb55 wow fadeInUp"><strong> {{ shop.title }} </strong></div>
+          <h1 class="h1-lg font-libre mb60 wow fadeInUp" data-wow-delay=".2s"><strong> {{ shop.title | safe }} </strong></h1>
+          {# <a href="#" class="btn btn-primary btn-sm mt50 wow fadeInUp" data-wow-delay=".4s"> {{ about.bannerCTA }} <i class="icon ion-ios-email-outline"></i></a> #}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="app">
+
+    {#         <div
+              class="swiper"
+              v-swiper:swiper="swiperOptions"
+              @click-slide="onSwiperClickSlide"
+              @slide-change-transition-start="onSwiperSlideChangeTransitionStart"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="index in 6" :key="index">
+                  <span>Slide {{ index }}</span>
+                </div>
+              </div>
+              <div class="swiper-pagination swiper-pagination-bullets"></div>
+            </div>
+ #}
+
+  {# <swiper
+    ref="swiperComponent"
+    :options="swiperOptions"
+    @click-slide="onSwiperClickSlide"
+    @set-translate="onSetTranslate"
+  >
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+    <swiper-slide>Slide 5</swiper-slide>
+    <swiper-slide>Slide 6</swiper-slide>
+    <div class="swiper-pagination"  slot="pagination"></div>
+  </swiper> #}
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 my-4" v-for="(product, index) in products" :key="product.id">
+          <div class="card border-0">
+            <div class="swiper " :class="['mySwiper' + [[ product.id ]]]">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="image in product.images" :key="image">
+                  <img :src="image" class="img-fluid" alt="">
+                </div>
+              </div>
+              <template v-if="product.images.length > 1">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </template>
+            </div>
+            <div class="card-body text-center">
+              <h6 class="text-bold">[[ product.title ]]</h6>
+              <p>₹[[ product.price ]]</p>
+              <p data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="cursor: pointer;">[[ product.description ]]</p>
+              <button class="btn btn-link fs18 text-black text-underline" @click="addToCart(product.id)" style="border: 1px solid #2d1a6a">add to cart</button>
+            </div>
+          </div>
+          [[ initSwiper(product.id) ]]
+        </div>
+      </div>
+    </div>
+  </div>
+  {# {{ cta.renderCta('We offer art classes for both adults & kids. Enroll today & jumpstart your art journey today!', 'Learn More', '/classes') }} #}
+  {% include "partials/_footer.njk" %}
+  {# <script src="https://cdn.jsdelivr.net/npm/swiper@5.3.6/js/swiper.min.js"></script> #}
+  {# <script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper"></script> #}
+  <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+  {# <script src="https://cdn.jsdelivr.net/npm/vue"></script> #}
+  <script>
+    // Vue.use(VueAwesomeSwiper)
+
+    new Vue({
+      el: '#app',
+      delimiters: ['[[', ']]'],
+      data: {
+        products: [],
+        swiperOptions: {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination'
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        }
+      },
+      async created() {
+        const { data } = await axios.post('api/shop-products');
+        this.products = data;
+      },
+      mounted() {
+        // console.log('Swiper instances:', this.$refs.swiperComponent.$swiper, this.swiper)
+      },
+      methods: {
+        addToCart(id) {
+          let products = sessionStorage.getItem('products');
+          if (products) {
+            products = JSON.parse(products);
+            products[id] = products[id] ? products[id] += 1 : 1;
+            sessionStorage.removeItem('products');
+            sessionStorage.setItem('products', JSON.stringify(products));
+          } else {
+            sessionStorage.setItem('products', JSON.stringify({
+              [id]: 1
+            }));
+          }
+        },
+        initSwiper(id) {
+          console.log(id)
+          
+          new Swiper(".mySwiper" + id, {
+            pagination: {
+              el: ".swiper-pagination",
+              type: "fraction",
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        }
+      }
+    });
+  </script>
+{% endblock %}

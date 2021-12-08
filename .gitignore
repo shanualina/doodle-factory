@@ -1,0 +1,10 @@
+node_modules
+*log
+*jpg
+*jpeg
+*png
+.env
+uploads/*
+!uploads/aa
+public/img
+*zip
